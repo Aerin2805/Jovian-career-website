@@ -6,59 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jovian Careers</title>
 
-    <style>
-        h1 {
-            font-size: 40px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            color: rgb(100, 100, 100);
-            text-align: center;
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-        h2 {
-            font-size: 32px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            color: rgb(100, 100, 100);
-            text-align: center;
-        }
-
-
-        #banner {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-        }
-
-        #container {
-            max-width: 720px;
-            margin: 0 auto; 
-        }
-        #btn {
-            text-align: center;
-        }
-        .BodyText{
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            color: rgb(80, 80, 80);
-        }
-    </style>
-</head>
+        <style>
+            #banner {
+                height: 360px;
+                width: 100%;
+                object-fit: cover;
+            }
+        </style>
+    </head>
 
 <body>
-    <div id="container">
-        <h1>Jovian Careers</h1>
-        <img id="banner" src="../static/banner.jpg" alt="Banner" height="320">
-        <h2>About Jovian</h2>
-        <p class="BodyText">
+    <div class="container">
+        <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+        <img class="img-fluid" id="banner" src="../static/banner.jpg" alt="Banner" height="320">
+        <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+        <p class="lead">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est magni natus velit qui reprehenderit eligendi,
             illum optio magnam dignissimos minus, quas asperiores delectus corrupti ratione placeat voluptates. Corrupti
             unde dolor suscipit dolorem quia optio enim, quis blanditiis ratione saepe magni ex sit labore dolore?
             Ducimus dolorum blanditiis alias. Labore veniam cupiditate expedita excepturi reiciendis ratione nostrum
             asperiores recusandae! Nemo perferendis voluptatum quae dicta nisi.
         </p>
-        <h2>Open Positions</h2>
-        <p>TODO - Show the Jobs here</p>
-        <div id="btn">
-            <button>Contact Us</button>
-            <p>Copyright 2022, Jovian</p>
+        <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+        <div>
+            {% for job in jobs %}
+            {% include 'jobitem.html' %}
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg">Contact Us</button>
+            <p class="mt-4">Copyright 2022, Jovian</p>
         </div>
     </div>
 </body>
