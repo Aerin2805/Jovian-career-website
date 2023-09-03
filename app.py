@@ -24,8 +24,8 @@ JOBS = [
     {
         "id" : 4,
         "Title" : "Bakend Engineer",
-        "Location" : "Maheshana, India",
-        "Salary" : "Rs. 12,00,000"
+        "Location" : "Unjha, India",
+        "Salary" : "Rs. 10,00,000"
     }
 ]
 
